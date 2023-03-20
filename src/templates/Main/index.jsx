@@ -15,8 +15,6 @@ function MainPage() {
     setLoading(true);
     e.preventDefault();
     const promise = api.post("/", user);
-    console.log(user);
-    console.log(promise);
     promise.then((res) => {
       setLoading(false);
       navigate("/users");
