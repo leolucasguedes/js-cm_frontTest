@@ -14,6 +14,7 @@ function MainPage() {
   function postUser(e) {
     setLoading(true);
     e.preventDefault();
+    console.log(user);
     const promise = api.post("/", user);
     promise.then((res) => {
       setLoading(false);
@@ -73,6 +74,8 @@ function MainPage() {
 export default MainPage;
 
 const Main = styled.main`
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -138,6 +141,9 @@ const Main = styled.main`
       align-items: baseline;
       form {
         margin-top: 250px;
+      }
+      h1 {
+        left: 180px;
       }
       button {
         width: 330px;

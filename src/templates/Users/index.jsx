@@ -19,7 +19,7 @@ function Users() {
     <Main>
       <DivInfo>
         <h1>Aqui estão os usuários cadastrados</h1>
-        {users.map((user, index) => {
+        {users?.map((user, index) => {
           const { name, age } = user;
           return (
             <UserDiv key={index}>
@@ -36,7 +36,8 @@ function Users() {
 export default Users;
 
 export const Main = styled.main`
-  width: 1200px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +61,9 @@ export const DivInfo = styled.div`
     font-family: brisa-sans;
     font-size: 21px;
     margin-bottom: 40px;
+  }
+  @media (max-width: 1000px) {
+    margin-left: -10px;
   }
 `;
 
@@ -89,5 +93,9 @@ export const UserDiv = styled.div`
     position: absolute;
     top: 12px;
     left: 250px;
+  }
+  @media (max-width: 1000px) {
+    width: 400px;
+    margin-left: -40px;
   }
 `;
